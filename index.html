@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- EDIT: your name and a one-line summary -->
+  <title>Dancan — Full-Stack Developer</title>
+  <meta name="description" content="Full-stack developer building logistics, finance and operations software. Creator of TransportIQ.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563eb'/><text x='16' y='22' font-size='16' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>D</text></svg>">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">Dancan</a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero container">
+      <!-- EDIT: your role and city -->
+      <p class="eyebrow">Full-stack developer · Nairobi, Kenya</p>
+      <h1>I build software that keeps <br>fleets, money and deliveries <span class="accent">moving.</span></h1>
+      <p class="lead">
+        I design and ship end-to-end business systems — from database schema to dashboard.
+        My latest work is <strong>TransportIQ</strong>, a logistics intelligence platform covering
+        fleet, operations, finance approvals and performance analytics.
+      </p>
+      <div class="cta-row">
+        <a href="#projects" class="btn btn-primary">See my work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <!-- EDIT: write 2–3 short paragraphs in your own words -->
+          <p>
+            I'm a computer science graduate working in IT services for a courier and logistics business. I like problems
+            where the software has to match how people actually work on the ground — drivers in the field,
+            finance teams approving payments, managers who need one honest number.
+          </p>
+          <p>
+            I work across the stack: React and TypeScript on the front end, Python and FastAPI on the back end,
+            and Postgres (via Supabase) underneath. I care about clear audit trails, role-based access and
+            interfaces people can use without training.
+          </p>
+        </div>
+        <ul class="facts">
+          <li><span class="fact-num">14</span><span class="fact-label">API modules in TransportIQ</span></li>
+          <li><span class="fact-num">11</span><span class="fact-label">app screens shipped</span></li>
+          <li><span class="fact-num">3-step</span><span class="fact-label">finance approval chain</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section container">
+      <h2 class="section-title">Projects</h2>
+
+      <article class="feature-card">
+        <div class="feature-head">
+          <div>
+            <p class="eyebrow">Featured · Logistics platform</p>
+            <h3>TransportIQ</h3>
+          </div>
+          <!-- Source is private. EDIT: add a live demo link here if you have one -->
+        </div>
+        <p>
+          A transport intelligence system for a courier business. It replaces spreadsheets and chat threads
+          with one place to run the fleet, track shipments and riders, approve expenses and see how the
+          operation is performing.
+        </p>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h4>Command center</h4>
+            <p>Live overview of vehicles, drivers, shipments and returns with charts for the numbers that matter.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Finance approvals</h4>
+            <p>Multi-role approval chain for trip and field expenses, with named approvers and an M-PESA audit trail.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Notifications</h4>
+            <p>In-app notification bell plus email alerts so each approver knows when something is waiting on them.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Routing &amp; fuel</h4>
+            <p>Distance and fuel estimates between saved locations to plan trips and sanity-check fuel claims.</p>
+          </div>
+          <div class="feature-item">
+            <h4>AI anomaly scan</h4>
+            <p>Heuristic scan over live data that flags unusual expenses and surfaces operational insights.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Merchants &amp; reports</h4>
+            <p>Merchant management, merchant sheet imports, document storage and exportable performance reports.</p>
+          </div>
+        </div>
+        <ul class="tags">
+          <li>React 19</li><li>TypeScript</li><li>Vite</li><li>Tailwind CSS</li><li>Recharts</li>
+          <li>Python</li><li>FastAPI</li><li>Supabase</li><li>PostgreSQL</li><li>Vercel</li><li>GitHub Actions</li>
+        </ul>
+      </article>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <p class="eyebrow">Mobile · Courier</p>
+          <h3>Okebori POS</h3>
+          <p>A point-of-sale app for parcel counters: book parcels, take payment and track what goes out.</p>
+          <ul class="tags"><li>Dart</li><li>Flutter</li></ul>
+          <a href="https://github.com/Dantehub209/Okebori_pos" class="card-link" target="_blank" rel="noopener">View code ↗</a>
+        </article>
+        <article class="project-card">
+          <p class="eyebrow">Web · Finance</p>
+          <h3>SACCO Management System</h3>
+          <p>A web app for managing SACCO members, transactions and loans, built on Google Apps Script.</p>
+          <ul class="tags"><li>Google Apps Script</li><li>JavaScript</li></ul>
+          <a href="https://github.com/Dantehub209/sacco-management-system" class="card-link" target="_blank" rel="noopener">View code ↗</a>
+        </article>
+        <article class="project-card">
+          <p class="eyebrow">Web · Finance</p>
+          <h3>mloop</h3>
+          <p>A chama (savings group) system for tracking members, contributions and payouts.</p>
+          <ul class="tags"><li>JavaScript</li></ul>
+          <a href="https://github.com/Dantehub209/mloop" class="card-link" target="_blank" rel="noopener">View code ↗</a>
+        </article>
+        <article class="project-card">
+          <p class="eyebrow">Desktop · Java</p>
+          <h3>Car Rental System</h3>
+          <p>A Java application for managing a car rental fleet, customers and bookings.</p>
+          <ul class="tags"><li>Java</li><li>OOP</li></ul>
+          <a href="https://github.com/Dantehub209/CarRentalSystem.java" class="card-link" target="_blank" rel="noopener">View code ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Front end</h4>
+          <p>React, TypeScript, JavaScript, Tailwind CSS, Flutter, responsive UI</p>
+        </div>
+        <div class="skill-group">
+          <h4>Back end</h4>
+          <p>Python, FastAPI, Java, Dart, Google Apps Script, REST APIs, JWT auth</p>
+        </div>
+        <div class="skill-group">
+          <h4>Data</h4>
+          <p>PostgreSQL, Supabase, SQL migrations, row-level access, reporting</p>
+        </div>
+        <div class="skill-group">
+          <h4>Delivery</h4>
+          <p>Git, GitHub Actions CI, Vercel, GitHub Pages, environment config</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container contact">
+      <h2 class="section-title">Let's work together</h2>
+      <p class="lead">Have a project, a role, or a process that needs software? I'd like to hear about it.</p>
+      <div class="cta-row">
+        <!-- EDIT: put your real email here -->
+        <a href="mailto:you@example.com" class="btn btn-primary">Email me</a>
+        <a href="https://github.com/Dantehub209" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+        <!-- EDIT: your LinkedIn URL, or delete this line -->
+        <a href="https://www.linkedin.com/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Dancan · Built with plain HTML &amp; CSS, hosted on GitHub Pages</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
