@@ -174,3 +174,5 @@ p { margin: 0; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+.card-links { margin-top: auto; display: flex; gap: 18px; }
+.card-links .card-link { margin-top: 0; }
