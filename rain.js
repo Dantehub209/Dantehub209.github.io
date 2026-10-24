@@ -1,9 +1,8 @@
 // Terminal rain: streams of glowing code glyphs falling in three layered columns behind the
-// contact section. Plain canvas, no libraries. Pauses off screen; visitors who prefer
-// reduced motion get a single still frame.
+// whole page (a fixed, full-window canvas). Plain canvas, no libraries. Pauses when the tab
+// is hidden; visitors who prefer reduced motion get a single still frame.
 (function () {
   const canvas = document.getElementById("rainCanvas");
-  const section = canvas && canvas.parentElement;
   if (!canvas || !canvas.getContext) return;
   const ctx = canvas.getContext("2d");
 
@@ -54,8 +53,8 @@
 
   function layout() {
     const ratio = Math.min(window.devicePixelRatio || 1, 2);
-    width = section.clientWidth;
-    height = section.clientHeight;
+    width = window.innerWidth;
+    height = window.innerHeight;
     canvas.width = Math.round(width * ratio);
     canvas.height = Math.round(height * ratio);
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
@@ -100,9 +99,8 @@
     }
   }
 
-  // Run at up to 30 frames a second, only while the section is on screen
+  // Run at up to 30 frames a second, only while the tab is visible
   let running = false;
-  let visible = false;
   let last = 0;
   function frame(now) {
     if (!running) return;
@@ -115,7 +113,7 @@
   }
 
   function update() {
-    const shouldRun = visible && !reducedMotion.matches && !document.hidden;
+    const shouldRun = !reducedMotion.matches && !document.hidden;
     if (shouldRun && !running) {
       running = true;
       last = performance.now();
@@ -128,17 +126,7 @@
 
   readColours();
   layout();
-  draw();
-
-  if ("IntersectionObserver" in window) {
-    new IntersectionObserver((entries) => {
-      visible = entries[0].isIntersecting;
-      update();
-    }).observe(section);
-  } else {
-    visible = true;
-    update();
-  }
+  update();
   document.addEventListener("visibilitychange", update);
   if (reducedMotion.addEventListener) reducedMotion.addEventListener("change", update);
 
@@ -148,15 +136,15 @@
     attributeFilter: ["data-theme"],
   });
 
-  let lastWidth = section.clientWidth;
-  let lastHeight = section.clientHeight;
-  const onResize = () => {
-    if (section.clientWidth === lastWidth && section.clientHeight === lastHeight) return;
-    lastWidth = section.clientWidth;
-    lastHeight = section.clientHeight;
+  // Phones resize the window as the address bar slides in and out while scrolling; only
+  // restart the rain for real changes (width, or a big jump in height)
+  let lastWidth = width;
+  let lastHeight = height;
+  window.addEventListener("resize", () => {
+    if (window.innerWidth === lastWidth && Math.abs(window.innerHeight - lastHeight) < 120) return;
+    lastWidth = window.innerWidth;
+    lastHeight = window.innerHeight;
     layout();
     draw();
-  };
-  if ("ResizeObserver" in window) new ResizeObserver(onResize).observe(section);
-  else window.addEventListener("resize", onResize);
+  });
 })();
