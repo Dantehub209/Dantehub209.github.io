@@ -9,10 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <!-- Bump ?v= whenever styles.css, script.js or rain.js change, so browsers fetch the new copy -->
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563eb'/><text x='16' y='22' font-size='16' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>D</text></svg>">
 </head>
 <body>
+  <!-- Decorative "terminal rain" behind the whole page (rain.js); EDIT the glyphs at the top of rain.js -->
+  <canvas class="rain" id="rainCanvas" aria-hidden="true"></canvas>
+
   <header class="nav">
     <div class="container nav-inner">
       <a href="#top" class="brand">Dancan</a>
@@ -192,17 +195,13 @@
     </section>
 
     <!-- CONTACT -->
-    <!-- The canvas is decorative "terminal rain" (rain.js); EDIT the glyphs at the top of rain.js -->
-    <section id="contact" class="contact">
-      <canvas class="rain" id="rainCanvas" aria-hidden="true"></canvas>
-      <div class="section container">
-        <h2 class="section-title">Open to junior roles</h2>
-        <p class="lead">I'm looking for junior software developer roles and internships. If your team is hiring, I'd love to hear from you.</p>
-        <div class="cta-row">
-          <a href="mailto:dancanmoranga2@gmail.com" class="btn btn-primary">Email me</a>
-          <a href="Dancan-Ochwangi-CV.pdf" class="btn btn-ghost" download>Download CV</a>
-          <a href="https://github.com/Dantehub209" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
-        </div>
+    <section id="contact" class="section container contact">
+      <h2 class="section-title">Open to junior roles</h2>
+      <p class="lead">I'm looking for junior software developer roles and internships. If your team is hiring, I'd love to hear from you.</p>
+      <div class="cta-row">
+        <a href="mailto:dancanmoranga2@gmail.com" class="btn btn-primary">Email me</a>
+        <a href="Dancan-Ochwangi-CV.pdf" class="btn btn-ghost" download>Download CV</a>
+        <a href="https://github.com/Dantehub209" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
   </main>
@@ -211,7 +210,7 @@
     <div class="container">© <span id="year"></span> Dancan Morang'a Ochwang'i · Built with plain HTML, CSS &amp; JavaScript, hosted on GitHub Pages</div>
   </footer>
 
-  <script src="script.js?v=3"></script>
-  <script src="rain.js?v=3" defer></script>
+  <script src="script.js?v=4"></script>
+  <script src="rain.js?v=4" defer></script>
 </body>
 </html>
