@@ -94,7 +94,7 @@ p { margin: 0; }
 .accent { color: var(--accent); }
 .lead { color: var(--muted); font-size: 18px; max-width: 62ch; margin-top: 20px; }
 
-/* Hero photo: text left, photo right on wide screens; photo under the text on phones */
+/* Hero image: text left, image right on wide screens; image under the text on phones */
 @media (min-width: 1000px) {
   .hero-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 56px; align-items: center; }
   .hero-grid h1 { font-size: clamp(34px, 3.8vw, 48px); }
@@ -108,7 +108,7 @@ p { margin: 0; }
               0 28px 70px -24px color-mix(in srgb, var(--accent) 60%, transparent);
 }
 .photo-frame img { display: block; width: 100%; height: auto; }
-/* A faint code grid around the edges (clear over me and the laptop), then a fade into the page */
+/* A faint code grid around the edges (clear over the laptop), then a fade into the page */
 .photo-frame::before, .photo-frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
 .photo-frame::before {
   background-image:
@@ -120,16 +120,16 @@ p { margin: 0; }
 }
 .photo-frame::after { background: linear-gradient(to bottom, transparent 82%, color-mix(in srgb, var(--bg) 55%, transparent)); }
 
-/* Floating editor window over the blue wall above my head */
+/* Floating editor window, hanging off the image's bottom-left corner */
 .code-card {
-  position: absolute; left: -28px; top: 12px; max-width: calc(100% + 12px);
+  position: absolute; left: -28px; bottom: -28px; max-width: calc(100% + 12px);
   background: color-mix(in srgb, var(--surface) 88%, transparent);
   -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 16px 40px -12px rgba(0, 0, 0, .35);
   font: 500 11.5px/1.5 "JetBrains Mono", ui-monospace, monospace; color: var(--text);
 }
 /* Phones: the window sits under the photo instead of over it */
-@media (max-width: 520px) { .code-card { position: relative; left: auto; top: auto; max-width: none; margin-top: 14px; } }
+@media (max-width: 520px) { .code-card { position: relative; left: auto; bottom: auto; max-width: none; margin-top: 14px; } }
 .code-bar { display: flex; align-items: center; gap: 6px; padding: 8px 12px; border-bottom: 1px solid var(--border); }
 .code-bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
 .code-bar i:first-child { background: #f87171; }
