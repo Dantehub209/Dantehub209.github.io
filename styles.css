@@ -192,5 +192,6 @@ p { margin: 0; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
-.card-links { margin-top: auto; display: flex; gap: 18px; }
+.card-links { margin-top: auto; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
 .card-links .card-link { margin-top: 0; }
+.card-note { color: var(--muted); font-size: 13px; }
