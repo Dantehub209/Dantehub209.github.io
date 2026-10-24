@@ -49,6 +49,13 @@
       </div>
     </section>
 
+    <!-- SKILL RIBBONS: decorative 3D ribbons (ribbons.js); the same skills are listed under Skills.
+         EDIT the words in ribbons.js. The CSS ribbon below shows until the 3D one is ready. -->
+    <div class="ribbons" aria-hidden="true">
+      <canvas id="ribbonCanvas"></canvas>
+      <p class="ribbons-fallback">React • TypeScript • Flutter • Python • FastAPI • PostgreSQL • Supabase • GitHub Actions</p>
+    </div>
+
     <!-- ABOUT -->
     <section id="about" class="section container">
       <h2 class="section-title">About</h2>
@@ -202,9 +209,10 @@
   </main>
 
   <footer class="footer">
-    <div class="container">© <span id="year"></span> Dancan Morang'a Ochwang'i · Built with plain HTML &amp; CSS, hosted on GitHub Pages</div>
+    <div class="container">© <span id="year"></span> Dancan Morang'a Ochwang'i · Built with plain HTML, CSS &amp; Three.js, hosted on GitHub Pages</div>
   </footer>
 
   <script src="script.js"></script>
+  <script type="module" src="ribbons.js"></script>
 </body>
 </html>
