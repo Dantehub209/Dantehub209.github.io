@@ -112,8 +112,8 @@ p { margin: 0; }
 .photo-frame::before, .photo-frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
 .photo-frame::before {
   background-image:
-    linear-gradient(color-mix(in srgb, #fff 22%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, #fff 22%, transparent) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, #9cc2ff 10%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, #9cc2ff 10%, transparent) 1px, transparent 1px);
   background-size: 28px 28px;
   -webkit-mask-image: radial-gradient(ellipse at 50% 58%, transparent 34%, #000 80%);
   mask-image: radial-gradient(ellipse at 50% 58%, transparent 34%, #000 80%);
