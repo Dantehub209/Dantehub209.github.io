@@ -25,6 +25,8 @@ function whenIdle(fn) {
 if (section && canvas) whenIdle(() => start().catch(() => { /* keep the CSS ribbon */ }));
 
 async function start() {
+  // The band's size comes from styles.css; without it (e.g. an old cached copy) keep the plain ribbon
+  if (getComputedStyle(section).position !== "relative") return;
   const THREE = await import(THREE_URL);
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
