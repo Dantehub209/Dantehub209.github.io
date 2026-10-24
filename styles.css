@@ -164,18 +164,16 @@ p { margin: 0; }
 .skill-group p { color: var(--muted); font-size: 14px; }
 
 /* Contact & footer */
-.contact { position: relative; overflow: hidden; text-align: left; }
-.contact > .section { position: relative; padding-bottom: 96px; }
+.contact { text-align: left; padding-bottom: 96px; }
 
-/* Terminal rain (rain.js): glyphs fall behind the contact section, strongest on the right,
-   fading out behind the text on the left so it stays easy to read */
+/* Terminal rain (rain.js): fixed behind the whole page. Cards have solid backgrounds, so it
+   shows around them; kept faint so the text on top stays easy to read */
 .rain {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  display: block; pointer-events: none; opacity: .7;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.15) 30%, #000 70%);
-  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.15) 30%, #000 70%);
+  position: fixed; inset: 0; z-index: -1;
+  width: 100%; height: 100%;
+  display: block; pointer-events: none; opacity: .45;
 }
-@media (max-width: 719px) { .rain { opacity: .35; } }
+@media (max-width: 719px) { .rain { opacity: .3; } }
 .footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); font-size: 14px; }
 
 /* Reveal on scroll */
