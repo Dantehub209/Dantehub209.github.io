@@ -102,23 +102,23 @@ p { margin: 0; }
 }
 .hero-photo { position: relative; margin: 48px auto 0; max-width: 420px; }
 @media (min-width: 1000px) { .hero-photo { margin: 0 0 0 auto; width: 100%; } }
-.photo-frame {
-  position: relative; border-radius: 24px; overflow: hidden;
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent),
-              0 28px 70px -24px color-mix(in srgb, var(--accent) 60%, transparent);
-}
-.photo-frame img { display: block; width: 100%; height: auto; }
-/* A faint code grid around the edges (clear over the laptop), then a fade into the page */
-.photo-frame::before, .photo-frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+/* No hard frame: the image fades out softly on every side into the page (and the rain),
+   with a faint blue glow behind it */
+.photo-frame { position: relative; }
 .photo-frame::before {
-  background-image:
-    linear-gradient(color-mix(in srgb, #9cc2ff 10%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, #9cc2ff 10%, transparent) 1px, transparent 1px);
-  background-size: 28px 28px;
-  -webkit-mask-image: radial-gradient(ellipse at 50% 58%, transparent 34%, #000 80%);
-  mask-image: radial-gradient(ellipse at 50% 58%, transparent 34%, #000 80%);
+  content: ""; position: absolute; inset: 6%; z-index: -1; pointer-events: none;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 40%, transparent), transparent);
+  filter: blur(36px);
 }
-.photo-frame::after { background: linear-gradient(to bottom, transparent 82%, color-mix(in srgb, var(--bg) 55%, transparent)); }
+.photo-frame img {
+  display: block; width: 100%; height: auto;
+  --fade-x: linear-gradient(to right, transparent, #000 22%, #000 78%, transparent);
+  --fade-y: linear-gradient(to bottom, transparent, #000 18%, #000 80%, transparent);
+  -webkit-mask-image: var(--fade-x), var(--fade-y);
+  -webkit-mask-composite: source-in;
+  mask-image: var(--fade-x), var(--fade-y);
+  mask-composite: intersect;
+}
 
 /* Floating editor window, hanging off the image's bottom-left corner */
 .code-card {
