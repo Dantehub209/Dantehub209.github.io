@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <!-- Bump ?v= whenever styles.css, script.js or ribbons.js change, so browsers fetch the new copy -->
+  <link rel="stylesheet" href="styles.css?v=2">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563eb'/><text x='16' y='22' font-size='16' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>D</text></svg>">
 </head>
 <body>
@@ -136,11 +137,12 @@
         <article class="project-card">
           <p class="eyebrow">Mobile · Courier</p>
           <h3>Okebori POS</h3>
-          <p>A point-of-sale app for parcel counters: book parcels, take payment and track what goes out.</p>
-          <ul class="tags"><li>Dart</li><li>Flutter</li></ul>
+          <p>A point-of-sale app for parcel counters: book parcels, take M-Pesa or cash payment, issue KRA eTIMS
+            receipts and track what goes out, with a web admin for managers.</p>
+          <ul class="tags"><li>Dart</li><li>Flutter</li><li>Supabase</li><li>PostgreSQL</li><li>M-Pesa Daraja</li></ul>
           <div class="card-links">
-            <a href="https://dantehub209.github.io/Okebori_pos/" class="card-link" target="_blank" rel="noopener">Live demo ↗</a>
-            <a href="https://github.com/Dantehub209/Okebori_pos" class="card-link" target="_blank" rel="noopener">View code ↗</a>
+            <a href="https://okebori-admin.pages.dev" class="card-link" target="_blank" rel="noopener">Web admin ↗</a>
+            <span class="card-note">Code private (in production use), available on request</span>
           </div>
         </article>
         <article class="project-card">
@@ -212,7 +214,7 @@
     <div class="container">© <span id="year"></span> Dancan Morang'a Ochwang'i · Built with plain HTML, CSS &amp; Three.js, hosted on GitHub Pages</div>
   </footer>
 
-  <script src="script.js"></script>
-  <script type="module" src="ribbons.js"></script>
+  <script src="script.js?v=2"></script>
+  <script type="module" src="ribbons.js?v=2"></script>
 </body>
 </html>
