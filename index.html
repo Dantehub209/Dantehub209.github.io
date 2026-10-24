@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <!-- Bump ?v= whenever styles.css, script.js or rain.js change, so browsers fetch the new copy -->
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563eb'/><text x='16' y='22' font-size='16' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>D</text></svg>">
 </head>
 <body>
@@ -34,23 +34,43 @@
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero container">
-      <p class="eyebrow">Junior software developer · Nairobi, Kenya</p>
-      <h1>Junior developer turning <br>real business problems into <span class="accent">working software.</span></h1>
-      <p class="lead">
-        I hold a <strong>Diploma in Computer Science</strong> and take a practical, hands-on approach to software
-        development, learning by building and deploying real-world solutions. My work follows two threads: moving
-        goods and managing money. In logistics, <strong>TransportIQ</strong> streamlines fleet operations, workflows and
-        financial approvals for a courier business, while <strong>Okebori POS</strong> handles bookings and payments at
-        the parcel counter. In community finance, my <strong>SACCO Management System</strong> and <strong>mloop</strong>
-        help savings groups track members, contributions, loans and payouts. All four are live. I am seeking a
-        <strong>Junior Software Developer</strong> role where I can apply my technical skills, contribute to meaningful
-        projects, and continue growing as a developer.
-      </p>
-      <div class="cta-row">
-        <a href="#projects" class="btn btn-primary">See my work</a>
-        <a href="Dancan-Ochwangi-CV.pdf" class="btn btn-ghost" download>Download CV</a>
+    <section class="hero container hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">Junior software developer · Nairobi, Kenya</p>
+        <h1>Junior developer turning <br>real business problems into <span class="accent">working software.</span></h1>
+        <p class="lead">
+          I hold a <strong>Diploma in Computer Science</strong> and take a practical, hands-on approach to software
+          development, learning by building and deploying real-world solutions. My work follows two threads: moving
+          goods and managing money. In logistics, <strong>TransportIQ</strong> streamlines fleet operations, workflows and
+          financial approvals for a courier business, while <strong>Okebori POS</strong> handles bookings and payments at
+          the parcel counter. In community finance, my <strong>SACCO Management System</strong> and <strong>mloop</strong>
+          help savings groups track members, contributions, loans and payouts. All four are live. I am seeking a
+          <strong>Junior Software Developer</strong> role where I can apply my technical skills, contribute to meaningful
+          projects, and continue growing as a developer.
+        </p>
+        <div class="cta-row">
+          <a href="#projects" class="btn btn-primary">See my work</a>
+          <a href="Dancan-Ochwangi-CV.pdf" class="btn btn-ghost" download>Download CV</a>
+        </div>
       </div>
+
+      <!-- EDIT: photo in img/ (webp + jpg); the code window is decorative -->
+      <figure class="hero-photo">
+        <div class="photo-frame">
+          <picture>
+            <source srcset="img/dancan.webp" type="image/webp">
+            <img src="img/dancan.jpg" alt="Dancan working on a laptop at his desk" width="720" height="870" fetchpriority="high">
+          </picture>
+        </div>
+        <div class="code-card" aria-hidden="true">
+          <div class="code-bar"><i></i><i></i><i></i><span>about.ts</span></div>
+<pre><span class="tok-k">const</span> dancan = {
+  role: <span class="tok-s">"Junior Developer"</span>,
+  ships: [<span class="tok-s">"TransportIQ"</span>, <span class="tok-s">"Okebori POS"</span>],
+  status: <span class="tok-s">"open to work"</span><span class="caret"></span>
+};</pre>
+        </div>
+      </figure>
     </section>
 
     <!-- ABOUT -->
@@ -210,7 +230,7 @@
     <div class="container">© <span id="year"></span> Dancan Morang'a Ochwang'i · Built with plain HTML, CSS &amp; JavaScript, hosted on GitHub Pages</div>
   </footer>
 
-  <script src="script.js?v=4"></script>
-  <script src="rain.js?v=4" defer></script>
+  <script src="script.js?v=5"></script>
+  <script src="rain.js?v=5" defer></script>
 </body>
 </html>
